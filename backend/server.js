@@ -2,28 +2,44 @@ const app = require('./app');
 require('./config/config.env')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
-const username = "syeedsamiha";
-const password = "FBs83SQfFg2DJ2Xb";
-const cluster = "cluster0.f08x12q";
-const dbname = "shopit";
 
-mongoose.connect(
-  `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`, 
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
-
+//config connection
 dotenv.config({path:`${__dirname}/config/config.env`})
+const conf = process.env
 
-console.log(__dirname )
-app.listen(process.env.PORT, ()=>{
-    console.log(`serving running on port:${process.env.PORT}`)
+//server start
+app.listen(conf.PORT, ()=>{
+    console.log(`serving running on port:${conf.PORT}`)
 })
 
+//database connection
+mongoose.connect(
+    `mongodb+srv://${conf.DB_USERNAME}:${conf.DB_PASSWORD}@${conf.CLUSTER}.mongodb.net/${conf.DB_NAME}?retryWrites=true&w=majority`, 
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
+  );
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
 });
+
+//handle promise rejections
+process.on("unhandledRejection",err=>{
+    console.log(`Error:${err.message}`)
+    console.log("Unhandled Promise rejection")
+
+    server.close(()=>{
+        process.exit(1)
+    })
+})
+
+//handle uncaught exceptions
+process.on("uncaughtException", err=>{
+    console.log(`Error:${err.message}`)
+    console.log("Uncaught Exceptions")
+
+    process.exit(1)
+})
