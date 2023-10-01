@@ -19,10 +19,10 @@ const productSchema = mongoose.Schema({
     //         required:true
     //     }
     // },
-    // category:{
-    //     type:String,
-    //     required:[true, "Please choose product category"]
-    // },
+    category:{
+        type:String,
+        required:[true, "Please choose product category"]
+    },
     // stock:{
     //     type:Number,
     //     required:[true, "Please enter no. of stock"],
