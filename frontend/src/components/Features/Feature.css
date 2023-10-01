@@ -1,0 +1,19 @@
+.feature-component{
+    display:flex;
+    width:70%;
+    margin:50px auto;
+    margin-top:90px;
+    margin-bottom:1000px
+}
+
+.feature{
+    width:30%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.feature-title{
+    padding-top:10px;
+    font-size: 20px;
+    font-weight: bold;
+}
