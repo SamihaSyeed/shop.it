@@ -1,15 +1,12 @@
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncError = require('../middleware/asyncErrors');
 const User = require('../models/user')
+const sendToken = require('../utils/jwtToken')
 
 exports.registerUser = catchAsyncError(async (req, res, next)=>{
     const user = await User.create(req.body);
-    const token = user.getJWTToken();
-
-    res.status(201).json({
-        success:true,
-        token
-    })    
+    
+    sendToken(user, 201, res)   
 })
 
 exports.loginUser = catchAsyncError( async (req,res,next)=> {
@@ -22,10 +19,16 @@ exports.loginUser = catchAsyncError( async (req,res,next)=> {
     const isPasswordMatched = await user.comparePassword(req.body.password);
     if(!isPasswordMatched) return next(new ErrorHandler("Invalid credentials", 401));
 
-    const token = user.getJWTToken();
+    sendToken(user, 200, res)
+})
 
-    res.status(201).json({
+exports.logout = catchAsyncError(async (req, res, next)=>{
+    res.cookie("token",null, {
+        expires:new Date(Date.now()),
+        httpOnly:true
+    })
+    res.status(200).json({
         success:true,
-        token
-    }) 
+        message:"logged out"
+    })
 })

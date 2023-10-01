@@ -1,10 +1,9 @@
 const app = require('./app');
-require('./config/config.env')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 
 //config connection
-dotenv.config({path:`${__dirname}/config/config.env`})
+dotenv.config()
 const conf = process.env
 
 //server start
