@@ -1,0 +1,33 @@
+.show-card{
+    background: rgba(255, 255, 255, 0.1);
+    width: 250px;
+    padding:10px;
+    margin:10px;
+}
+
+.show-name{
+    padding:10px 0
+}
+
+.show-img{
+    width:100%;
+    min-height:200px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color:white
+
+}
+.rating{
+    background: none;
+    width:fit-content;
+    padding:5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    font-weight: bold;
+    border-radius: 20px;
+    color:#333
+}

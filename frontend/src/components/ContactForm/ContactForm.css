@@ -1,0 +1,33 @@
+@import url(//db.onlinewebfonts.com/c/e5f78b4fb90a80a32be156470cbfead1?family=Avenir+LT+Pro);
+
+.contact-form-fields{
+    display: flex;
+    padding:30px 0;
+    
+}
+
+.contact-form-columns{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding:0 10px;
+    font-family:'Avenir LT Pro';
+    color:#fff;
+    font-size: 15px;
+}
+
+.contact-form-btn{
+    width:fit-content;
+    margin:0 0 0 auto
+}
+
+.contact-form-columns input, textarea{
+    padding:5px 10px;
+    background:#fff;
+    border: 1px solid #333;
+    font-size:14px;
+    outline: none;
+    font-family:'Avenir LT Pro';
+    border-radius:10px
+
+}

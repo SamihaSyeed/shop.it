@@ -1,18 +1,19 @@
 @import url(https://db.onlinewebfonts.com/c/8cdb6b9f81fd5d65941e179961c84065?family=Poppins);
+@import url(//db.onlinewebfonts.com/c/e5f78b4fb90a80a32be156470cbfead1?family=Avenir+LT+Pro);
                 
 .banner{
     padding:100px 0;
     background-color: #333;
     text-align: center;
     color:#fff;
-    height:60vh;
+    height:70vh;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    margin-top:100px;
+    margin-top:50px;
 }
 
 .banner-text{
-    font-size:40px;
+    font-size:2rem;
     width:60%;
     margin:0 auto;
     font-family: 'Poppins';
@@ -23,6 +24,7 @@
     width:60%;
     margin:0 auto;
     margin-bottom: 20px;
+    font-family: 'Avenir LT Pro';
                                                 
 }
 .title-name{

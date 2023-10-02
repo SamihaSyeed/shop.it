@@ -1,0 +1,22 @@
+.login-comp{
+    background-color:#333;
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    height:100vh;
+    color:#fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field{
+    outline:none;
+    padding:5px 15px;
+    margin-bottom: 20px;
+    border:none;
+    color:#333
+}
+.input-label{
+    text-align: left;
+    font-weight:600;
+}

@@ -6,32 +6,39 @@ import { Link } from 'react-router-dom'; // If you're using React Router for nav
 import './Navbar.css'
 import Logo from '../images/Logo.svg'
 import SearchBar from '../SearchBar/SearchBar';
+import Login from '../Login/Login';
 
 function Navbar() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [height, setHeight] = useState(0)
+  // const [isVisible, setIsVisible] = useState(false);
+  // const [height, setHeight] = useState(0)
   
-  useEffect(() => {   
-    window.addEventListener("scroll", listenToScroll);
-    return () => 
-       window.removeEventListener("scroll", listenToScroll); 
-  }, [])
+  // useEffect(() => {   
+  //   window.addEventListener("scroll", listenToScroll);
+  //   return () => 
+  //      window.removeEventListener("scroll", listenToScroll); 
+  // }, [])
   
-  const listenToScroll = () => {
-    let heightToShowFrom = 300;
-    const winScroll = document.body.scrollTop || 
-        document.documentElement.scrollTop;
-    setHeight(winScroll);
+  // const listenToScroll = () => {
+  //   let heightToShowFrom = 300;
+  //   const winScroll = document.body.scrollTop || 
+  //       document.documentElement.scrollTop;
+  //   setHeight(winScroll);
 
-    if (winScroll > heightToShowFrom) {  
-         !isVisible && setIsVisible(true);
-    } else {
-         setIsVisible(false);
-    }  
-  };
-  console.log(height)
+  //   if (winScroll > heightToShowFrom) {  
+  //        !isVisible && setIsVisible(true);
+  //   } else {
+  //        setIsVisible(false);
+  //   }  
+  // };
+  // console.log(height)
+  const [display, setDisplay] = useState("none")
+  function handleClick(){
+    display=="none"? setDisplay("flex") : setDisplay("none")
+    
+  }
   return (
-    <div className="navbar">
+    <>
+      <div className="navbar">
       <div className="navbar-container">
         <div className='nav-list' >
             <Link to="/" className="navbar-logo">
@@ -41,11 +48,6 @@ function Navbar() {
           <li className="navbar-item">
             <Link to="/home" className="navbar-link">
               Home
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/home" className="navbar-link">
-              About
             </Link>
           </li>
           <li className="navbar-item">
@@ -64,20 +66,23 @@ function Navbar() {
          
             </ul>
         </div>
-        {
+        {/* {
         isVisible 
          && 
         <SearchBar id='hide'/>
-        }
-        <div>
-          <Link to="/signup" className="navbar-link ">
-                  <button className='primary-btn'>
+        } */}
+        <Link to="/register">
+          
+                  <button className='primary-btn' onClick={handleClick}>
                       Login/Sign Up
                   </button>
-          </Link>
-        </div>
+          
+        </Link>
       </div>
+      
     </div>
+    <Login display={display} />
+    </>
   );
 }
 
