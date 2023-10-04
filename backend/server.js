@@ -7,13 +7,13 @@ dotenv.config()
 const conf = process.env
 
 //server start
-app.listen(conf.PORT, ()=>{
+const server = app.listen(conf.PORT, ()=>{
     console.log(`serving running on port:${conf.PORT}`)
 })
 
 //database connection
 mongoose.connect(
-    `mongodb+srv://${conf.DB_USERNAME}:${conf.DB_PASSWORD}@${conf.CLUSTER}.mongodb.net/${conf.DB_NAME}?retryWrites=true&w=majority`, 
+  `mongodb://${conf.DB_USERNAME}:${conf.DB_PASSWORD}@ac-1rquxvy-shard-00-00.f08x12q.mongodb.net:27017,ac-1rquxvy-shard-00-01.f08x12q.mongodb.net:27017,ac-1rquxvy-shard-00-02.f08x12q.mongodb.net:27017/?ssl=true&replicaSet=atlas-fus7ej-shard-0&authSource=admin&retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
