@@ -19,7 +19,7 @@ const Signup = () => {
             <option value="Seller">Seller</option>
             </select>
             </div>
-            <button className='primary-btn'>LOGIN</button>
+            <button className='primary-btn'>Create</button>
     </div>
   )
 }

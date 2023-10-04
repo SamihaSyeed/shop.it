@@ -21,12 +21,12 @@ const Login = () => {
             <label className="input-label">Password</label>
             <input type='password' placeholder='Enter your Password'  className="input-field" />
             </div>
-            <button className='primary-btn'>LOGIN</button>
-            <div style={{fontSize:"15px", marginTop:"10px"}}>Don't have an account? <button onClick={handleClick} style={{all:"unset"}}><b>Sign Up</b></button></div>
+            <button className='primary-btn'>Continue</button>
+            <div style={{fontSize:"15px", marginTop:"10px"}}>Don't have an account? <button onClick={handleClick} style={{all:"unset", cursor:"pointer"}}><b>Sign Up</b></button></div>
         </div>
         <div className='login-comp' style={{display:displayVar, justifySelf:"right", textAlign:"center"}}>
           <Signup />
-          <div style={{fontSize:"15px", marginTop:"10px"}}>Already have an account? <button onClick={handleClick} style={{all:"unset"}}><b>Log in</b></button></div>
+          <div style={{fontSize:"15px", marginTop:"10px"}}>Already have an account? <button onClick={handleClick} style={{all:"unset", cursor:"pointer"}}><b>Log in</b></button></div>
         </div>
     </div>
   )

@@ -19,6 +19,7 @@ const Card = (props) => {
                 <div>{item.rating}</div>
         </div>}
         </div>
+        <b ><sup>&#8377;</sup><span style={{fontSize:"25px"}}>{item.price}</span></b>
         <Tag tagName={item.category} />
 
     </div> 

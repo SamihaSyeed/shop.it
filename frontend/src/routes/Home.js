@@ -4,14 +4,18 @@ import Features from '../components/Features/Features';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import ProjectDisplay from '../components/ProjectDisplay/ProjectDisplay';
+import Metadata from '../Metadata';
+
 const Home = () => {
   return (
     <div>
-        <Navbar />
-        <Banner />
-        <Features />
-        <ProjectDisplay />
-        <Footer />
+    <Metadata title="ShopIT" />
+
+    <Navbar />
+    <Banner />
+    <Features />
+    <ProjectDisplay />
+    <Footer />
     </div>
   )
 }

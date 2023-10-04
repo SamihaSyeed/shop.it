@@ -81,7 +81,6 @@ function Navbar() {
       </div>
       
     </div>
-    <Login display={display} />
     </>
   );
 }
