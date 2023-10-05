@@ -1,12 +1,12 @@
 .show-card{
-    background: rgba(255, 255, 255, 0.1);
+    background: #33333317;
     width: 250px;
     padding:10px;
     margin:10px;
 }
 
 .show-name{
-    padding:10px 0
+    padding:10px 0;
 }
 
 .show-img{
@@ -30,4 +30,13 @@ a{
     font-weight: bold;
     border-radius: 20px;
     color:#333
+}
+.wishlist{
+    all: unset;
+    translate: 190px -220px;
+}
+.cart-btn {
+    border-radius: 0;
+    width:100%;
+    margin-top:10px
 }

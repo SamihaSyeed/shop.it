@@ -21,7 +21,7 @@ const ProjectDisplay = () => {
     }, [dispatch])
     const projectDetails = [
         {
-            id:3,
+            id:1,
             img:image,
             name:"MACBOOK",
             description:"We layered pattern on pattern and used multiple types of textures and finishes. Multifunctional spaces, loud wallpapers, plenty of plants, signature stand-out tiling - this space has it all. ",
@@ -30,7 +30,7 @@ const ProjectDisplay = () => {
             price:500
         },
         {
-            id:3,
+            id:2,
             img:image,
             name:"TYPING SPEED",
             description:"We layered pattern on pattern and used multiple types of textures and finishes. Multifunctional spaces, loud wallpapers, plenty of plants, signature stand-out tiling - this space has it all. ",
@@ -52,11 +52,11 @@ const ProjectDisplay = () => {
     <div>
         <div className='header-text' style={{"padding":"30px 0"}}> Featured Products </div>
         <div className='project-display' >
-
-            {product && product.map(card => {
+        {projectDetails.map(card =>  <Card data={card}  />)}
+            {/* {product && product.map(card => {
                 console.log("iterating")
                 return (<Card data={card} />)
-            })}
+            })} */}
     </div>
     </div>
   )
